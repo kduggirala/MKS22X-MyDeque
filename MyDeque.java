@@ -48,8 +48,13 @@ public class MyDeque<E>{
   public String toString(){ }
   public void addFirst(E element){ 
 	  if (start == 0) {
-		  
+		  if (data[data.length - 1] != null) {
+			  doubleSize();
+		  }
+		  start += data.length;
 	  }
+	  
+	  size++;
   }
   public void addLast(E element){ }
   public E removeFirst(){ }
