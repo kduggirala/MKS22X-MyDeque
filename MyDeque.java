@@ -17,7 +17,7 @@ public class MyDeque<E>{
 		else
 			throw new IllegalArgumentException();
 		size = 0;
-		start = 1;
+		start = 0;
 		end = 0;
 	}
 
@@ -39,7 +39,7 @@ public class MyDeque<E>{
 				newData[c++] = data[i];
 			}
 			for (int i = 0; i <= end; i++) {
-				newData[c++] = data[i++];
+				newData[c++] = data[i];
 			}
 		}
 		data = newData;
@@ -76,6 +76,8 @@ public class MyDeque<E>{
 		}
 		data[--start] = element;
 		size++;
+		if (size == 1) 
+			end = start;
 	}
 	public void addLast(E element){ 
 		if (end == data.length - 1) {
@@ -112,15 +114,9 @@ public class MyDeque<E>{
 		return null;
 	}
 	public E getFirst(){ 
-		if (size > 0) {
-			return data[start];
-		}
-		return null;
+		return data[start];
 	}
 	public E getLast(){ 
-		if (size > 0) {
-			return data[end];
-		}
-		return null;
+		return data[end];
 	}
 }
