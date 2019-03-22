@@ -49,8 +49,9 @@ public class MyDeque<E>{
 		end = c - 1;
 	}
 	public String toString(){ 
+		StringBuffer arrayString = new StringBuffer();
+		arrayString.append("{");
 		if (size > 0) {
-			StringBuffer arrayString = new StringBuffer();
 			if (start < end) {
 				for (int i = start; i <= end; i++) {
 					arrayString.append(data[i].toString() + " ");
@@ -66,9 +67,9 @@ public class MyDeque<E>{
 						arrayString.append(data[i].toString() + " ");
 				}
 			}
-			return arrayString.toString();
 		}
-		return "";
+		arrayString.append("}");
+		return arrayString.toString();
 	}
 	public void addFirst(E element){ 
 		if (element == null)
