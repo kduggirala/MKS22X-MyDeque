@@ -51,14 +51,23 @@ public class MyDeque<E>{
 	  if (start == 0) {
 		  start += data.length;
 	  }
-	  if (data[start - 1] == null) {
+	  if (data[start - 1] != null) {
 		  doubleSize();
 		  start += data.length;
 	  }
 	  data[--start] = element;
 	  size++;
   }
-  public void addLast(E element){ }
+  public void addLast(E element){ 
+	  if (end == data.length - 1) {
+		  end -= data.length;
+	  }
+	  if (data[end + 1] != null) {
+		  doubleSize();
+	  }
+	  data[++end] = element;
+	  size++;
+  }
   public E removeFirst(){ }
   public E removeLast(){ }
   public E getFirst(){ }
