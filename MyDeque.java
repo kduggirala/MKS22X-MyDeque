@@ -44,7 +44,7 @@ public class MyDeque<E>{
 		}
 		data = newData;
 		start = 0;
-		end = c;
+		end = c - 1;
 	}
 	public String toString(){ 
 		if (size > 0) {
@@ -56,10 +56,12 @@ public class MyDeque<E>{
 			}
 			else {
 				for (int i = start; i < data.length; i++) {
-					arrayString.append(data[i].toString() + " ");
+					if (data[i] != null)
+						arrayString.append(data[i].toString() + " ");
 				}
 				for (int i = 0; i <= end; i++) {
-					arrayString.append(data[i].toString() + " ");
+					if (data[i] != null) 
+						arrayString.append(data[i].toString() + " ");
 				}
 			}
 			return arrayString.toString();
