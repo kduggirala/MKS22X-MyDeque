@@ -42,18 +42,20 @@ public class MyDeque<E>{
 			 newData[c++] = data[i++];
 		 }
 	 }
+	 data = newData;
 	 start = 0;
 	 end = c;
   }
   public String toString(){ }
   public void addFirst(E element){ 
 	  if (start == 0) {
-		  if (data[data.length - 1] != null) {
-			  doubleSize();
-		  }
 		  start += data.length;
 	  }
-	  
+	  if (data[start - 1] == null) {
+		  doubleSize();
+		  start += data.length;
+	  }
+	  data[--start] = element;
 	  size++;
   }
   public void addLast(E element){ }
