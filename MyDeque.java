@@ -95,7 +95,7 @@ public class MyDeque<E>{
 		if (size > 0) {	
 			E temp = data[start];
 			data[start++] = null;
-			if (start == data.length - 1) {
+			if (start == data.length) {
 				start -= data.length;
 			}
 			size--;
