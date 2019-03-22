@@ -46,7 +46,23 @@ public class MyDeque<E>{
 	 start = 0;
 	 end = c;
   }
-  public String toString(){ }
+  public String toString(){ 
+	  StringBuffer arrayString = new StringBuffer();
+	  if (start < end) {
+		  for (int i = start; i <= end; i++) {
+			  arrayString.append(data[i].toString() + " ");
+		  }
+	  }
+	  else {
+		  for (int i = start; i < data.length; i++) {
+			  arrayString.append(data[i].toString() + " ");
+		  }
+		  for (int i = 0; i <= end; i++) {
+			  arrayString.append(data[i].toString() + " ");
+		  }
+	  }
+	  return arrayString.toString();
+  }
   public void addFirst(E element){ 
 	  if (start == 0) {
 		  start += data.length;
@@ -92,6 +108,16 @@ public class MyDeque<E>{
 	  }
 	  return null;
   }
-  public E getFirst(){ }
-  public E getLast(){ }
+  public E getFirst(){ 
+	  if (size > 0) {
+		  return data[start];
+	  }
+	  return null;
+  }
+  public E getLast(){ 
+	  if (size > 0) {
+		  return data[end];
+	  }
+	  return null;
+  }
 }
