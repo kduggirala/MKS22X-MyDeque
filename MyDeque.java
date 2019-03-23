@@ -54,7 +54,8 @@ public class MyDeque<E>{
 		if (size > 0) {
 			if (start < end) {
 				for (int i = start; i <= end; i++) {
-					arrayString.append(data[i].toString() + " ");
+					if (data[i] != null)
+						arrayString.append(data[i].toString() + " ");
 				}
 			}
 			else {
