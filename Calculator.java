@@ -17,22 +17,22 @@ public class Calculator{
 			case "-":
 				second = stack.removeLast();
 				first = stack.removeLast();
-				stack.addLast(first + second);
+				stack.addLast(first - second);
 				break;
 			case "*":
 				second = stack.removeLast();
 				first = stack.removeLast();
-				stack.addLast(first + second);
+				stack.addLast(first * second);
 				break;
 			case "/":
 				second = stack.removeLast();
 				first = stack.removeLast();
-				stack.addLast(first + second);
+				stack.addLast(first / second);
 				break;
 			case "%":
 				second = stack.removeLast();
 				first = stack.removeLast();
-				stack.addLast(first + second);
+				stack.addLast(first % second);
 				break;
 			default:
 				stack.addLast(Double.parseDouble(string[i]));
