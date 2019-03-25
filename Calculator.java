@@ -1,17 +1,17 @@
 
 public class Calculator{
-	/*Evaluate a postfix expression stored in s.
-	 *Assume valid postfix notation, separated by spaces.
-	 */
 	public static void main(String[] args) {
 		System.out.println(eval("10 2.0 +"));
 		System.out.println(eval("11 3 - 4 + 2.5 *"));
 		System.out.println(eval("8 2 + 99 9 - * 2 + 9 -"));
 		System.out.println(eval("1 2 3 4 5 + * - -"));
 	}
+	/*Evaluate a postfix expression stored in s.
+	 *Assume valid postfix notation, separated by spaces.
+	 */
 	public static double eval(String s){
 		String[] string = s.split(" ");
-		MyDeque<Double> stack = new MyDeque<Double>();
+		MyDeque<Double> stack = new MyDeque<Double>(s.length());
 		double second, first;
 		for (int i = 0; i < string.length; i++) {
 			switch(string[i]) {
