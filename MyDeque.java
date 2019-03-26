@@ -9,7 +9,7 @@ public class MyDeque<E>{
 		size = 0;
 		data = (E[])new Object[10];
 		start = 0;
-		end = 0;
+		end = 9;
 	}
 
 	@SuppressWarnings("unchecked") 
@@ -20,7 +20,7 @@ public class MyDeque<E>{
 			throw new IllegalArgumentException();
 		size = 0;
 		start = 0;
-		end = 0;
+		end = data.length - 1;
 	}
 
 	public int size(){ 

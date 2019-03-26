@@ -11,7 +11,7 @@ public class Calculator{
 	 */
 	public static double eval(String s){
 		String[] string = s.split(" ");
-		MyDeque<Double> stack = new MyDeque<Double>(s.length());
+		MyDeque<Double> stack = new MyDeque<Double>((string.length / 2) + 1);
 		double second, first;
 		for (int i = 0; i < string.length; i++) {
 			switch(string[i]) {
